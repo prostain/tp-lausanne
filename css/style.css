@@ -2,10 +2,69 @@
     margin: 0;
     padding: 0;
 }
-
+a{
+    text-decoration: none;
+}
 header
 {
+    background: rgba(0, 0, 0, 0.8);
     width: 100%;
+
+}
+header ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+header ul li {
+list-style: none;
+}
+
+.header_titre {
+    color: white;
+    width: 60%;
+    align-self: center;
+    text-align: center;
+    font-family: monospace;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
+    display: none;
+
+}
+
+header .header_icons {
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+header .header_icons a .icon.big {
+    height: 1em;
+    width: 1em;
+    color: white;
+}
+header .header_icons a {
+    height: 1em;
+    padding: 0 1em;
+    color: white;
+}
+.meteo{
+    border-right: 1px solid white;
+    display: none;
+}
+.temperature
+{
+    display: none;
+}
+
+a svg
+{
+    fill: white;
 }
 .navigation
 {
@@ -15,66 +74,122 @@ header
     color: white;
     display: inline;
 }
-
-
-.title
-{
-    display: inline;
-    text-align: center;
-}
-
-.navigation ul
-{
-
-}
-
-.navigation ul >li
-{
-    display: inline;
-    list-style: none;
-}
-
-.header_main
+.main_inner
 {
     position: relative;
     background-image: url("../img/lauzanne_img.jpg");
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 100%;
+    height: 85%;
+    box-shadow: inset 0px 0px 60px 0px rgba(0,0,0,0.85);
 }
 
-.header_main_reseaux
+.main_reseaux-sociaux
 {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    top: 300px;
-    left: 0;
+    display: none;
 }
 
-.header_main_bottom
+
+nav
+{
+    width: 100%;
+}
+.main_nav
 {
     position: absolute;
-    bottom: 0;
+    bottom: 30px;
     height: 60px;
-
-    opacity: 0.3;
     color: white;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    width: 100%;
 }
 
-.header_main_bottom > li
+.main_nav > li
 {
-    margin: 0 20px;
-    background-color: grey;
-    width: 200px;
-    font-size: 20px;
+    list-style: none;
+    margin: 2.5px 0;
+    padding: 1em 0;
+    width: 100%;
+    font-size: 1.8rem;
+    font-family: monospace;
     text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0.9;
+    align-self: flex-end;
 }
 
-.header_main_bottom li a
+.main_nav li a
 {
     color: white;
+    width: 100%;
+    text-decoration: none;
+}
+.main_nav li a:hover
+{
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+    .header_titre
+    {
+        display: inline;
+    }
+    .meteo{
+        display: initial;
+    }
+    .temperature
+    {
+        display: initial;
+    }
+    .main_reseaux-sociaux {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 20%;
+    }
+    .main_reseaux-sociaux a {
+        background: #2682c2;
+        display: flex;
+        flex-direction: row;
+        width: 60px;
+        height: 56px;
+        color: #fff;
+        transition: width 1s;
+    }
+    .main_reseaux-sociaux a svg {
+        fill: currentColor;
+        margin:auto;
+        width: 30px;
+        height: 30px;
+
+    }
+    .main_reseaux-sociaux a span {
+        display: none;
+    }
+    .main_reseaux-sociaux a:hover {
+        background: #10435f;
+        width: 200px;
+        text-decoration: underline;
+    }
+    .main_reseaux-sociaux a:hover span {
+        width: 100%;
+        text-align: right;
+        display: initial;
+        padding: 1em 0.25em;
+        font-size: 20px;
+    }
+
+    .main_nav
+    {
+        flex-direction: row;
+    }
+
+    .main_nav li
+    {
+        margin: 0 2.5px;
+        width: 33%;
+    }
+
 }
